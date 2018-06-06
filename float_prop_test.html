@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>float 属性详解</title>
+		<style>
+
+			.container {
+				height: 100px;
+				border: 5px solid blue;
+			}
+			span {
+				background-color: red;
+			}
+
+			.container2 {
+				width: 100px;
+				border: 2px solid blue;
+			}
+
+			.no-enough-room {
+				float: left;
+				width: 150px;
+				background-color: red;
+				opacity: .6;
+			}
+
+			.has-border {
+				overflow: hidden;
+				border: 5px solid blue;
+			}
+			.inline-block {
+				width: 50px;
+				height: 50px;
+				display: inline-block;
+				border: 1px solid blue;
+			}
+
+			.float-left {
+				width: 100px;
+				height: 100px;
+				float: left;
+				background-color: red;
+			}
+
+			.float-right {
+				width: 100px;
+				height: 100px;
+				float: right;
+				background-color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, tenetur!</span>
+		</div>
+
+		<h2>没有足够的空间</h2>
+		<div class="container2">
+			<div class="no-enough-room">floated box</div>
+		</div>
+
+		<h2>一个行中包含多个浮动元素</h2>
+		<div class="container3 has-border  ">
+			<span>consectetur adipisicing elit. Nihil, eos?</span>
+			<div class="inline-block">inline-block</div>
+			<span>Lorem ipsum dolor sit amet.</span>
+			<div class="inline-block">inline-block</div>
+		</div>
+
+
+		<h2>float box 的margin不会重叠</h2>
+		<div class="has-border">
+			<div class="float-left">floated box</div>
+			<p style="clear: left;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate architecto mollitia debitis quam distinctio voluptatum repudiandae obcaecati est, qui aliquam.</p>
+		</div>
+
+		<h2>左右浮动规则</h2>
+		<div class="has-border">
+			<div class="float-left">left</div>
+			<div class="float-right">right</div>
+		</div>
+
+		<h2>匿名块盒子</h2>
+		<div style="background-color: red; margin-bottom: 10px;">this is good</div>
+		<p style="background-color: blue;">this is good</p>
+
+
+		<h2>仅有block元素</h2>
+		<p class="has-border" style="display: inline;">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, quis?
+			<div style="border: 1px solid red; display: block;">Lorem ipsum dolor.</div>
+			Lorem ipsum.
+		</p>
+	</body>
+</html>
