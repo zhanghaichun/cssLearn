@@ -80,11 +80,7 @@
 
         .container02 > .inner-content {
             
-            /*position: relative;
-            top: 41px;
-            设置这两个属性就可以很直观的印证层叠顺序图。
-            层叠上下文(background/border) -> 负z-index -> block 水平盒子 -> inline 水平盒子
-            */
+            /*position: relative;*/
             
 
             z-index: 1;
@@ -100,7 +96,11 @@
 
             position: relative;
             left: 100px;
-            z-index: -1;
+            /*top: 41px;
+            设置这两个属性就可以很直观的印证层叠顺序图。
+            层叠上下文(background/border) -> 负z-index -> block 水平盒子 -> inline 水平盒子
+            */
+            z-index: -1;      
             
 
             width: 500px;
