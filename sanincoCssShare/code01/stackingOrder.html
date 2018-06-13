@@ -135,6 +135,24 @@
                 来解决这个问题。
             */
         }
+
+        /* --------
+
+            .container03
+        -------- */
+        .container03 {
+            width: 500px;
+            height: 300px;
+            background-color: gray;
+            border: 2px solid white;
+        }
+
+        .container03 > img {
+            /*float: left;*/
+            width: 200px;
+            height: 100px;
+        }
+
     </style>
 </head>
 <body>
@@ -151,6 +169,15 @@
             <img src="fixed.jpg" alt="">
             <!-- <div style="background-color: red; height: 100px;"></div> -->
         </div>
+    </div>
+
+    <h2>inline 元素的层叠水平高于浮动元素。</h2>
+    <div class="container03">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est commodi architecto pariatur harum molestias, ipsam sapiente nihil amet, suscipit cum delectus, dolorum maiores. Odit ex, repellendus quas totam voluptate maxime.
+        </p>
+        <img src="fixed.jpg" alt="">
+        
     </div>
 </body>
 </html>
