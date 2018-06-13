@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>CSS 2D 转换</title>
+		<style>
+
+			/**
+			 * CSS 2D transition.
+			 */
+			.box {
+				width: 700px;
+				padding: 10px;
+				border: 1px solid red;
+			}
+
+			.box .inline-box {
+
+				display: inline-block; /* It is invalid for inline element.  */
+				
+				border: 1px solid blue;
+
+
+				transform: translate(12px, 12px);
+				/*transform: translateX(12px);*/
+				/*transform: translateY(12px);*/
+
+			}
+			
+			/* transform: scale(); */
+			.transform-img {
+				width: 400px;
+				height: 200px;
+
+				transform: scale(.6);
+				/*transform: scaleX(.6);*/
+				/*transform: scaleY(.6);*/
+
+			}
+
+			
+
+		</style>
+	</head>
+	<body>
+		<h3>transform: translate()</h3>
+		<div class="box">
+			<div class="inline-box">Lorem ipsum dolor sit amet.</div>
+		</div>
+
+		<h3>transform: scale()</h3>
+		<div class="img-box">
+			<img src="images/fixed.jpg" alt="" class="transform-img">
+		</div>
+	</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>CSS 结合符与通配符</title>
+		<style>
+			
+			/* 后代元素选择器 */
+			.descendant-box .code {
+				display: inline-block;
+				padding: 10px;
+				border: 1px solid red;
+			}
+
+			/* 子元素选择器 */
+			.child-box > p {
+				color: red;
+			}
+	
+			.child-box > span { /* 这条声明规则无效 */
+				color: blue;
+			}
+			
+			/* 相邻兄弟选择器 */
+			.upon-brother + p {
+				color: pink;
+			}
+
+
+			/* 通配符 */
+			/* * {
+				background-color: #005599;
+			}
+			
+			body {
+				background-color: white;
+				padding: 0;
+				margin: 0;
+			} */
+		</style>
+	</head>
+	<body>
+		<h2>1, 后代元素选择器</h2>
+		<div class="descendant-box">
+			
+			<p> <!-- 儿子元素 -->
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate eligendi illo magnam ab possimus nostrum asperiores saepe, corporis, veniam, autem qui et vitae minus inventore quam, ipsum ad velit officia.
+
+				<code class="code">This is a paragraph</code> <!-- 孙子元素 -->
+			</p>
+
+		</div>
+
+		<h2>2, 子元素选择器</h2>
+		<div class="child-box">
+			
+			<p> <!-- 儿子元素 -->
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate eligendi illo magnam ab possimus nostrum asperiores saepe, corporis, veniam, autem qui et vitae minus inventore quam, ipsum ad velit officia.
+
+				<span>This is a paragraph</span> <!-- 孙子元素 -->
+			</p>
+
+		</div>
+
+		<h2>3, 相邻兄弟选择器（后续）</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+		<div class="upon-brother">Lorem ipsum dolor.</div>
+		<p>Lorem ipsum dolor sit amet.</p>
+		<span>Lorem ipsum.</span>
+
+		<h2>4, 后续兄弟选择器</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+		<div class="follow-brother">Lorem ipsum dolor.</div>
+		<span>Lorem ipsum dolor.</span>
+		<span>Lorem ipsum dolor.</span>
+		<span>Lorem ipsum dolor.</span>
+
+		<p>
+			world world world world world
+			<span>inner span</span>
+		</p>
+		<span>Lorem ipsum dolor.</span>
+
+		
+ 
+
+
+	</body>
+</html>

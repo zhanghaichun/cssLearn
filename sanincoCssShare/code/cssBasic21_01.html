@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>固定尺寸容器的水平垂直居中</title>
+		<style>
+			.wrap {
+			    width: 200px;
+			    height: 200px;
+			    background: yellow;
+			    position: relative;
+			}
+			.wrap .center {
+			    width: 100px;
+			    height: 100px;
+			    background: green;
+			    margin: auto;
+			    position: absolute;
+			    left: 0;
+			    right: 0;
+			    top: 0;
+			    bottom: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="center"></div>
+		</div>
+	</body>
+</html>

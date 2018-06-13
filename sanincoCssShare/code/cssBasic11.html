@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>overflow属性</title>
+		<style>
+
+			.clearfix:before, .clearfix:after {
+				display: table;
+				content: '';
+			}
+
+			.clearfix:after {
+				clear: both;
+			}
+
+
+
+			.box {
+				float: left;
+				width: 200px;
+				height: 100px;
+				margin-right: 20px;
+				border: 1px solid red;
+			}
+
+			.box.overflow-auto {
+				overflow: auto;
+			}
+
+			.box.overflow-hidden {
+				float: none;
+				overflow: hidden;
+			}
+			
+			.box.overflow-visible {
+				float: none;
+				overflow: visible;
+			}
+
+			.box.overflow-scroll {
+				overflow: scroll;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>overflow: auto</h3>
+		<div class="clearfix">
+			<div class="box overflow-auto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit iusto ad distinctio tenetur voluptatem similique soluta at, vel reiciendis possimus mollitia sit, laborum sapiente. Expedita molestiae blanditiis, nostrum commodi officia.</div>
+			
+			<div class="box overflow-auto">Lorem ipsum dolor lestiae blanditiis, nia.</div>
+		</div>
+		
+		<h3>overflow: hidden</h3>
+		<div class="box overflow-hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur est natus excepturi blanditiis nihil vero adipisci minima cum debitis vitae. Iste unde nemo dignissimos, obcaecati molestiae adipisci magni, suscipit dolore!</div>
+		
+		<h3>overflow: visible</h3>
+		<div class="box overflow-visible">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur est natus excepturi blanditiis nihil vero adipisci minima cum debitis vitae. Iste unde nemo dignissimos, obcaecati molestiae adipisci magni, suscipit dolore!</div>
+
+		<h3>overflow: scroll</h3>
+		<div class="clearfix">
+			<div class="box overflow-scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam minima accusantium, sed rerum provident non assumenda. Molestiae voluptatem ducimus ut assumenda excepturi obcaecati consequuntur inventore, atque nemo tempora omnis numquam.</div>
+			
+			<div class="box overflow-scroll">re, atque nemo tempora omnis numquam.</div>
+		</div>
+	</body>
+</html>

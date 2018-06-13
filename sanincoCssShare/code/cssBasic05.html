@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>属性选择器</title>
+		<style>
+			/* 属性选择器 */
+
+			div {
+				width: 300px;
+				height: 200px;
+				margin-bottom: 20px;
+			}
+
+			[name="content"] { 
+				color: blue;
+			}
+
+			[name] { /* 选择含有 name 属性的元素 */
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 属性选择器 -->
+		<div id="wrapper" class="wrapper" name="content" data-wrapper="block-div">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, laborum.</div>
+
+		<div name="Div2">Text Color</div>
+	</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>内联元素居中对齐</title>
+		<style>
+			.box {
+				width: 700px;
+				margin-bottom: 20px;
+				text-align: center;
+				background-color: red;
+			}
+
+			.inline-block-wrapper {
+				width: 700px;
+				text-align: center;
+				background-color: blue;
+			}
+
+			.inline-block {
+				display: inline-block;
+				border: 1px solid pink;
+			}
+			
+			/**
+			 * image: inline-block;
+			 */
+			.img-box {
+				margin-top: 30px;
+				text-align: center;
+				background-color: gray;
+			}
+
+			.inline-block-img {
+				width: 300px;
+				height: 200px;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="box">Lorem ipsum dolor sit amet.</div>
+		
+		<div class="inline-block-wrapper">
+			
+			<div class="inline-block">Lorem ipsum dolor sit amet, consectetur.</div>
+		</div>
+
+		<div class="img-box">
+			<img src="images/fixed.jpg" alt="" class="inline-block-img">
+		</div>
+	</body>
+</html>

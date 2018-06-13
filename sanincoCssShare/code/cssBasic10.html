@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>布局属性 box-sizing</title>
+		<style>
+
+			.clearfix:before, .clearfix:after {
+				display: table;
+				content: '';
+			}
+
+			.clearfix:after {
+				clear: both;
+			}
+
+
+			.box {
+				/*height: 15px;*/
+				padding: 15px;
+				
+				border: 1px solid red;
+
+				background-color: red;
+				background-clip: content-box;
+
+
+			}
+			
+			/* box-sizing 属性的应用 */
+			.piece-box {
+				width: 400px;
+				margin-top: 20px;
+			}
+
+			.child-box {
+				float: left;
+				width: 25%;
+				height: 200px;
+				/*border: 1px solid black;*/
+				/*box-sizing: border-box;*/ /* 关键属性 */
+			}
+
+			.child-box.item1 {
+				background-color: red;
+			}
+
+			.child-box.item2 {
+				background-color: green;
+			}
+
+			.child-box.item3 {
+				background-color: blue;
+			}
+
+			.child-box.item4 {
+				background-color: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, ipsa!</div>
+
+		<div class="piece-box clearfix">
+			<div class="child-box item1"></div>
+			<div class="child-box item2"></div>
+			<div class="child-box item3"></div>
+			<div class="child-box item4"></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>特殊性</title>
+		<style>
+			/* 内联样式和ID属性来比较优先级 */
+			#inlineStyle { /* ID 属性 {0, 1, 0, 0} */
+				color: blue;
+			}
+
+			/* 内联样式与多个ID属性来比较优先级 */
+			#inlineStyle2 #inlineInnerStyle { /* ID 属性 {0, 2, 0, 0} */
+				background-color: blue;
+			}
+
+		</style>
+	</head>
+	<body>
+		<h3>内联样式和ID属性来比较优先级</h3>  <!-- 内联样式{1, 0, 0, 0} -->
+		<div id="inlineStyle" style="color: red;">Lorem ipsum.</div>
+
+
+		<h4>内联样式与多个ID属性来比较优先级</h4> <!-- 内联样式{1, 0, 0, 0} -->                   
+		<div id="inlineStyle2">
+			Lorem ipsum dolor.
+			<span id="inlineInnerStyle" style="background-color: red;">Lorem ipsum.</span>
+		</div>
+	</body>
+</html>

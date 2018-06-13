@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>基本浮动知识</title>
+		<style>
+
+			.box {
+				/*height: 100px;*/ /* The first way */
+				border: 1px solid blue;
+
+			}
+
+			.left,
+			.right {
+				width: 200px;
+				height: 100px;
+			}
+
+			.left {
+				float: left;
+				background-color: red;
+			}
+
+			.right {
+				float: right;
+				background-color: green;
+			}
+			
+			/**
+			 * Clear the float, 
+			 * restore height of the parent container.
+			 * @type {[type]}
+			 */
+			.clearfix:before,
+			.clearfix:after {
+				display: table;
+				content: '';
+			}
+
+			.clearfix:after { clear: both; }
+
+
+			.wrapper-box { 
+				float: left;
+				background-color: gray;
+			 }
+
+
+		</style>
+	</head>
+	<body>
+		<h1>浮动： 包裹与破坏</h1>
+		<h3>破坏</h3>
+		<div class="box clearfix">
+			<div class="left"></div>
+			<div class="right"></div>
+			<!-- The second way, waste of resource -->
+			<!-- <div style="clear: both; "></div> -->
+		</div>
+
+		<div class="text">Lorem ipsum dolor sit amet, consectetur.</div>
+
+		<h3>包裹</h3>
+		<div class="wrapper-box">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+		</div>
+	</body>
+</html>

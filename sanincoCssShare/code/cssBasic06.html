@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+
+		<meta http-equiv="Expires" content="0">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<meta http-equiv="Pragma" content="no-cache">
+		<title>伪类</title>
+		<style>
+
+			/**
+			 * pseudo classes
+			 */
+
+
+			.link:hover {color: yellow;} /*鼠标移动到链接上*/ 
+ 
+			.link:active {color: green} /*选定的链接*/ 
+			
+			/* :focus 适用于任何用户可以输入的元素 */
+			.ident-input:focus {
+				background-color: yellow;
+			}
+		</style> 
+	</head>
+	<body>
+		<a href="http://www.itcast.cn" target="_blank" class="link">点击我</a>
+
+		<input type="text" class="ident-input">
+	</body>
+</html>

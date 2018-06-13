@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>块元素与内联元素</title>
+		<style>
+
+			body {
+				margin: 0;
+				padding: 0;
+			}
+
+			h3 {
+				background-color: lightgray;
+			}
+			
+			.block-element {
+				display: block;
+				height: 100px;
+				background-color: blue;
+			}
+
+			.inline-element {
+				display: inline;
+				height: 100px;
+				background-color: red;
+			}
+
+			.inline-block-element {
+				display: inline-block;
+				height: 100px;
+				background-color: green;
+			}
+
+			.display-none-element {
+				display: none;
+				height: 100px;
+				background-color: lightgray;
+			}
+
+			
+		</style>
+	</head>
+	<body>
+		<h3>块元素</h3>
+		<div class="block-element"></div>
+
+		<h3>内联元素</h3>
+		<span class="inline-element">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, velit?</span>
+
+		<h3>内联块元素</h3><!-- 包裹内容 -->
+		<div class="inline-block-element">Lorem ipsum dolor sit amet.</div>
+
+		<h3>隐藏元素</h3>
+		<div class="display-none-element">Lorem ipsum dolor.</div>
+	</body>
+</html>

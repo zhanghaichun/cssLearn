@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex-wrap</title>
+    <style>
+        /**
+         * Three columns come true
+         * float property make the element display 
+         * on inline box way.
+         * @type {[type]}
+         */
+
+        .clearfix:before,
+        .clearfix:after {
+            display: table;
+            content: '';
+        }
+
+        .clearfix:after {
+            clear: both;
+        }
+
+        .left,
+        .right {
+            width: 200px;
+            height: 100px;
+        }
+
+        .left {
+            float: left;
+            background-color: red;
+        }
+
+        .right {
+            /* Use user agent to watch the differenct between 
+            float element and nomal element. */
+            float: right;
+            background-color: green;
+        }
+
+        .main { /* Main container ( center position ) */
+            height: 100px;
+            margin: 0 210px;
+            background-color: yellow;
+        }
+
+
+    </style>
+</head>
+<body>
+   <div class="box clearfix">
+       <div class="left"></div>
+       <div class="right"></div>
+       <!-- containers' order is important -->
+       <div class="main"></div>
+   </div>
+</body>
+</html>

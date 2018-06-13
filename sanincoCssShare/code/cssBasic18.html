@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+		<title>Position 布局属性的使用</title>
+		<style>
+
+			body {
+				margin: 0;
+				padding: 0;
+				padding-top: 100px; /* proper distance. */
+
+				height: 2000px;
+			}
+			/**
+			 * Positon
+			 */
+			
+			/* position: fixed; */
+			#pageHeader {
+				position: fixed;
+				top: 0;
+				/*z-index: 1;*/
+				width: 100%;
+				padding: 30px;
+				margin-top: 0;
+				text-align: center;
+				background-color: green;
+			}
+
+			/* position: relative; 
+				relative to origin position of element.*/
+			.relative-box {
+				padding: 10px;
+				border: 1px solid red;
+			}
+
+			.relative-box-content {
+				position: relative;
+				/*left: 20px;*/
+
+				display: inline-block;
+
+				border: 1px solid blue;
+			}
+
+			/* position: absolute; */
+			.absolute-box {
+				position: relative;
+
+				width: 700px;
+				height: 500px;
+
+				border: 1px solid black;
+			}
+
+			.box1,
+			.box2,
+			.box3,
+			.box4 {
+				position: absolute;
+
+				width: 100px;
+				height: 100px;
+			}
+
+			.box1 {
+				/*top: 100px;*/
+				top: 0;
+				left: 0;
+				background-color: red;
+			}
+			
+			.box2 {
+				top: 0;
+				right: 0;
+				background-color: blue;
+			}
+
+			.box3 {
+				bottom: 0;
+				left: 0;
+				background-color: green;
+			}
+
+			.box4 {
+				bottom: 0;
+				right: 0;
+				background-color: lightgray;
+			}
+
+			/* z-index */
+			.z-index-box {
+				position: relative;
+				
+				width: 700px;
+				height: 500px;
+
+				border: 1px solid blue;
+			}
+
+			.z-index-item1,
+			.z-index-item2 {
+				position: absolute;
+
+				width: 100px;
+				height: 100px;
+			}
+
+			.z-index-item1 {
+				top: 50px;
+				left: 100px;
+				z-index: 2;
+				background-color: blue;
+			}
+
+			.z-index-item2 {
+				top: 70px;
+				left: 120px;
+				z-index: 1;
+				background-color: green;
+			}
+		
+
+		</style>
+	</head>
+	<body>
+		<h3 id="pageHeader">Position: fixed (page header)</h3>
+
+		<h3>position: relative;</h3>
+		<div class="relative-box">
+			<div class="relative-box-content">Lorem ipsum dolor sit amet.</div>
+		</div>
+
+		<h3>position: absolute</h3>
+		<div class="absolute-box">
+			<div class="box1"></div>
+			<div class="box2"></div>
+			<div class="box3"></div>
+			<div class="box4"></div>
+		</div>
+
+		<h3>z-index</h3>
+
+		<div class="z-index-box">
+			<div class="z-index-item1">above</div>
+			<div class="z-index-item2">below</div>
+		</div>
+	</body>
+</html>
