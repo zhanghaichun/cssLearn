@@ -6,163 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Stacking Order</title>
-    <style>
-
-        /* 
-
-            CSS层叠上下文理解链接：
-                http://www.zhangxinxu.com/wordpress/2016/01/understand-css-stacking-context-order-z-index/
-            
-            CSS深入理解流体特性和BFC特性下多栏自适应布局链接：
-                http://www.zhangxinxu.com/wordpress/2015/02/css-deep-understand-flow-bfc-column-two-auto-layout/
-         */
-
-        body {
-            background-color: #444;
-            color: yellow;
-        }
-        
-        /* --------
-
-            .container
-        -------- */
-        .container {
-            position: relative;
-            width: 500px;
-            height: 300px;
-            padding: 30px; /* 设置了内补空白 */
-
-            /* 使用border属性的时候，如果第三个值省略掉，则默认是继承父元素的字体颜色。
-            如果该元素设置了 color 属性， 那么使用的就是该元素自身的color属性的值。 */
-            border: 2px solid;
-
-
-            color: white;  /*此属性设置容器中文字的颜色 */
-            background-color: gray;
-        }
-
-        .box1, .box2 {
-            width: 100px;
-            height: 100px;
-            box-sizing: border-box;
-        }
-
-        .box1 {
-            background-color: blue;
-        }
-
-        .box2 {
-            /*position: absolute;
-            top: 0;
-            left: 0;
-
-            设置绝对定位并将 top, left 的值设置为0的时候，会导致元素直接移动到
-            父元素(是定位元素，且position属性的值不为static)的左上角，即使父元素设置了padding 值。
-
-            像margin, padding 这种属性能创建额外的空白，空白内部不能放置其他的元素，但前提是位于文档流中的
-            元素。*/
-
-
-
-            background-color: red;
-        }
-
-        /* --------
-
-            .container02
-        -------- */
-        .container02 {
-            width: 500px;
-            height: 300px;
-            background-color: gray;
-            border: 2px solid white;
-        }
-
-        .container02 > .inner-content {
-            
-            /*position: relative;*/
-            
-
-            z-index: 1;
-            /* 对于普通元素，设置 z-index 属性是无效的。 
-            只有在position 属性为 relative, absolute, fixed 的时候，设置
-            z-index 属性才能生效。
-            */
-           
-            background-color: blue;
-        }
-
-        .container02 > .inner-content > img {
-
-            position: relative;
-            left: 100px;
-            /*top: 41px;
-            设置这两个属性就可以很直观的印证层叠顺序图。
-            层叠上下文(background/border) -> 负z-index -> block 水平盒子 -> inline 水平盒子
-
-            每一个层叠上下文都是自成体系的，整个元素是被认为在父层叠上下文的顺序中。
-            */
-            z-index: -1;      
-            
-
-            width: 500px;
-            height: 100px;
-
-            /* 在 Chrome 浏览器中，默认字体的大小是 16px, 即font-size: 16px; 但是如果输入一行文字，
-            则行高则一定不会是 16px, 在Chrome 浏览器中， line-height: 21px; 剩余的5像素(21px - 16px = 5px)
-            就是浏览器自动给行框上下添加的边距。*/
-
-            /* line-height属性指的是行高， 行高的计算是包含了文字内容的，例如：line-height: 30px;
-            意思就是文字的中心点距离行框的上边和下边各为15px. 但是文字的大小为16px, 那么就是文字
-            距离行框的上间距和下间距分别为7px (30 - 16 = 14/2 = 7).
-            行框中，上间距肯定是等于下间距的。
-            
-            下面是一个详细介绍 line-height 属性的网址：
-            <link>: https://www.cnblogs.com/zhangyachen/p/8035661.html
-            (其中包含了对文本的内联框， 行框，文字的基线和中线等的介绍。)
-            */
-           
-            /* 
-            如果一个block块状盒子(.img-container)一开始里面没有添加任何内容， 同时也没有设置 height 属性，
-            则该盒子的默认高度是0， 但是如果向其中添加一个<img>元素，而且元素设置 height: 100px;
-            则在浏览器中, (.img-container)块状盒子的高度大于100px, 这是为什么呢？
-
-            有两种解决方案: 
-                1, <img> 元素的默认显示角色是 display: inline-block; ,如果将 <img> 元素的显示角色设置成
-                display: block; 那么 <img> 父容器的高度就会和<img>元素的高度相同了。
-                设置元素为浮动元素也可以，因为这是间接将元素设置为block元素。
-
-                2, display: inline-block 元素在块元素中有 3 ~ 4像素的空白距离(在下方)， 因为默认的情况下
-                行内块元素是和父容器中文本的基线对齐的， 而文本的基线和底线是有一段距离的。 可以设置 vertical-align: top;
-                来解决这个问题。
-            */
-        }
-
-        /* --------
-
-            .container03
-        -------- */
-        .container03 {
-
-            /*
-            设置 position: absolute | relative | fixed;
-            默认的情况下，z-index： auto.
-             */
-            width: 500px;
-            height: 300px;
-            background-color: gray;
-            border: 2px solid white;
-        }
-
-        .container03 > img {
-            /*float: left;*/
-            width: 200px;
-            height: 100px;
-        }
-
-    </style>
+    <link rel="stylesheet" href="css/stackingOrder.css">
 </head>
 <body>
+
+    <!-- 
+        如果说一个定位元素没有发生嵌套的时候，
+        就只接遵循两大黄金准则：
+        谁大谁上 和 后来居上
+
+
+        从层叠顺序上讲，z-index: auto 和 z-index: 0 是差不多的，
+        但是从层叠上下文上来讲，z-index: auto 和 z-index: 0是有本质的区别的， z-index: auto不创建层叠上下文，但是
+        z-index: 0 是创建层叠上下文的。
+     -->
     
     <!-- 这段代码用来演示在默认的情况下，
     position: fixed 也是 z-index: auto。 遵循层叠顺序的两大
@@ -191,9 +48,42 @@
     <h2>inline 元素的层叠水平高于浮动元素。</h2>
     <div class="container03">
         <p>
+            <img src="img/fixed.jpg" alt="">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est commodi architecto pariatur harum molestias, ipsam sapiente nihil amet, suscipit cum delectus, dolorum maiores. Odit ex, repellendus quas totam voluptate maxime.
+
         </p>
-        <img src="fixed.jpg" alt="">
+        
+        
+    </div>
+    
+    <h2>如下两个容器是验证后来居上的示例：</h2>
+    <h5>后来居上的意思就是指，当两个元素的层叠顺序相同的时候，
+    在DOM流中出于后面的元素会覆盖前面的元素。 示例中使用的是在DOM流中拥有相同层叠顺序的元素， 图片的显示角色是
+    display: inline-block, 文字的显示角色是 display: inline. 两者的层叠顺序是相同的。</h5>
+    <div class="container04">
+        <!-- inline 元素在下。 -->
+        <p>
+            
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est commodi architecto pariatur harum molestias, ipsam sapiente nihil amet, suscipit cum delectus, dolorum maiores. Odit ex, repellendus quas totam voluptate maxime.
+
+        </p>
+
+        <img src="img/fixed.jpg" alt="">
+        
+        
+    </div>
+
+    <div class="container05">
+        <!-- inline 元素在上。 -->
+        <img src="img/fixed.jpg" alt="">
+        <p>
+            
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est commodi architecto pariatur harum molestias, ipsam sapiente nihil amet, suscipit cum delectus, dolorum maiores. Odit ex, repellendus quas totam voluptate maxime.
+
+        </p>
+
+        
+        
         
     </div>
 
